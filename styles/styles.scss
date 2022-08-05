@@ -1,0 +1,143 @@
+$Softblue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$White: hsl(0, 0%, 100%);
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+body {
+    display:flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Outfit" sans-serif;
+    font-size: 18px;
+    background-color: $main-bg;
+    color: hsl(0, 0%, 100%);
+    padding:1.25rem;
+    .card {
+        border-top: 40px;
+        border-radius: 15px;
+        max-width: 400px;
+        margin: 40px auto;
+        box-shadow: 0px 10px 20px rgb(19, 18, 18);
+        background-color: $card-bg;
+        padding: 15px;
+        .cardImage {
+            position: relative;
+            img {
+                max-width: 100%;
+                border-radius: 15px;
+            }
+            div {
+                position:absolute;
+                top: 0;
+                background-color: $Cyan;
+                width: 100%;
+                height:calc(100% - 4px);
+                z-index: 999;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 15px;
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top:50%;
+                    transform:translate(-50%, -50%);
+                    width: 15%;
+                    
+                }
+            }
+            div:hover {
+                    opacity: 0.7;
+                    cursor:pointer;
+                    border-radius: 15px;
+                }
+        }
+
+
+
+        .cardContent{
+            margin: 5px auto;
+            font-weight: 900;
+            line-height: 2.3rem;
+            width: 100%;
+            border-bottom: solid 1px $line;
+
+            h2:hover {
+                color: $Cyan;
+                cursor: pointer;
+            }
+
+            p {
+                color: $Softblue;
+                font-size: 18px;
+                line-height: 1.5rem;
+            }
+
+            ul {
+                padding-left: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li {
+                    list-style-type: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                img {
+                    margin-right: 5px;
+                }
+            }
+            li:nth-child(1) {
+                color: $Cyan;
+            }
+            li:nth-child(2) {
+                color: $Softblue;
+            }
+        }
+    }
+
+        .cardCreator {
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            img {
+                width: 50px;
+                margin-right: 20px;
+                border-radius: 50%;
+                border: 2px solid $White;
+            }
+            p {
+                color: $Softblue;
+            span {
+                color: $White;
+                font-weight: 500;
+            }
+            span:hover {
+                color: $Cyan;
+                cursor:pointer;
+            }
+        }
+    }
+}
+
+
+    .attribution {
+        padding-bottom: 50px;
+        margin: auto;
+        a {
+            text-decoration: none;
+            color: red;
+        }
+        a:hover {
+            color: $Cyan;
+        }
+    }
+}
+
+@import './media' ;
